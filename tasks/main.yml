@@ -1,12 +1,12 @@
 ---
 # tasks file for external-port-connectivity-validator-server
 
-- name: Create script staging folder
+- name: Create script staging folder for server
   file:
     path: /tmp/simpleserver
     state: directory
 
-- name: Copy from remote to client server script
+- name: Copy server script
   copy:
     src: validation_server.py
     dest: /tmp/simpleserver/validation_server.py
