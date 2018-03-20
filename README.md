@@ -49,3 +49,9 @@ Author Information
 
 The author of this role is Carlos Frias <cfrias@apigee.com>.
 
+<!-- BEGIN Google Required Disclaimer -->
+
+# Required Disclaimer
+
+This is not an officially supported Google product.
+<!-- END Google Required Disclaimer -->
