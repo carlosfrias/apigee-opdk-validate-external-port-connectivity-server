@@ -1,2 +1,3 @@
 ---
 # defaults file for external-port-connectivity-validator-server
+staging_folder: /tmp/edge

@@ -2,19 +2,20 @@
 # tasks file for external-port-connectivity-validator-server
 
 - name: Create script staging folder for server
+  become: true
   file:
-    path: /tmp/simpleserver
+    path: "{{ staging_folder }}/simpleserver"
     state: directory
 
 - name: Copy server script
+  become: true
   copy:
     src: validation_server.py
-    dest: /tmp/simpleserver/validation_server.py
-    owner: '{{ opdk_user_name }}'
-    group: '{{ opdk_group_name }}'
+    dest: "{{ staging_folder }}/simpleserver/validation_server.py"
     mode: 0755
 
 - name: Running validation server at http://{{ private_address }}:{{ check_port }}
-  shell: /tmp/simpleserver/validation_server.py "" {{ check_port }}
+  become: true
+  shell: '{{ staging_folder }}/simpleserver/validation_server.py "" {{ check_port }}'
   async: 1000
   poll: 0
